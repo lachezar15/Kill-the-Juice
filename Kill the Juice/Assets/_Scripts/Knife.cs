@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class Knife : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    float timeBeforeCanAttack = 0;
 
-    // Update is called once per frame
+    public Animator anim;
+
     void Update()
     {
-        
+        timeBeforeCanAttack += Time.deltaTime;
+
+        if (Input.GetMouseButton(0) && timeBeforeCanAttack > 0.5f)
+        {
+            Attack();
+        }
+    }
+
+    void Attack()
+    {
+        anim.SetTrigger("Attack");
     }
 }

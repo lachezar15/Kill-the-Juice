@@ -2,15 +2,17 @@ using UnityEngine;
 
 public class KnifeThrown : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public Rigidbody rb;
+
+    public float speed;
+
     void Start()
     {
-        
+        rb.linearVelocity = transform.forward * speed;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        
+        Destroy(gameObject);
     }
 }
