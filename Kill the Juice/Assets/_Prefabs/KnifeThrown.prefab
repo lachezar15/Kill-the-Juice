@@ -160,7 +160,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KnifeThrown
   rb: {fileID: 4540477880053980204}
-  speed: 30
+  DestroyPS: {fileID: 5166329700662313451, guid: ec984b86349180f4091ca39842bac123, type: 3}
+  glassSplash: {fileID: 7012399327152221784, guid: 9e977a5483783364bbf9671b0f35a71e, type: 3}
+  speed: 50
 --- !u!65 &8981354579060004495
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -180,8 +182,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.15374303, y: 0.82162285, z: 0.16543007}
-  m_Center: {x: -0.008764625, y: 0.03070426, z: -0.015694022}
+  m_Size: {x: 0.06616926, y: 0.47132754, z: 0.13623881}
+  m_Center: {x: -0.004385948, y: -0.105035186, z: -0.0010983944}
 --- !u!54 &4540477880053980204
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ public class PlayerInventory : MonoBehaviour
     private Transform weaponHolder;
     [SerializeField] float pickupRange;
 
-    bool hasItem = false;
+    public bool hasItem = false;
 
     private void Start()
     {

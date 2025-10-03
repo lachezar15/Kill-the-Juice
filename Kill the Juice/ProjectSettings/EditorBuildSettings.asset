@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LachoScene.unity
+    guid: d2f6b024195edb24c8738f0ff9ef3f4d
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 01f835ae75a2d374a8b4b99e1cec1aef
   - enabled: 1

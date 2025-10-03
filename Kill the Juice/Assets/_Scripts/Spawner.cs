@@ -10,7 +10,12 @@ public class Spawner : MonoBehaviour
 
     public GameObject[] easyJuice;
 
-    int enemiesCount = 5;
+    int currentWave = 0;
+
+    public int enemiesCount = 5;
+
+    public Animator fridgeAnim;
+    public Animator fridgeAnim2;
 
     private void Start()
     {
@@ -41,8 +46,17 @@ public class Spawner : MonoBehaviour
     }
 
     void OpenFridge()
-    { 
-        // we open the fridge and let the enemies escape
+    {
+        fridgeAnim.SetBool("Opened", true);
+        fridgeAnim2.SetBool("Opened", true);
+        for (int i = 0; i < aliveEnemies.Count; i++)
+        {
+            if (aliveEnemies[i].tag == "Enemy")
+                aliveEnemies[i].GetComponent<JuiceMovement>().releasedFromFridge = true;
+
+            if (aliveEnemies[i].tag == "GlassEnemy")
+                aliveEnemies[i].GetComponent<GlassJuiceMovement>().releasedFromFridge = true;
+        }
     }
 
     IEnumerator SpawnEnemies()
@@ -58,6 +72,9 @@ public class Spawner : MonoBehaviour
             OpenFridge();
 
             yield return new WaitUntil(() => aliveEnemies.TrueForAll(e => e == null));
+
+            aliveEnemies.Clear();
+            currentWave++;
         }
     }
 }
